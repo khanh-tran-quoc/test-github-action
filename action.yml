@@ -1,0 +1,13 @@
+name: 'Test GitHub Action'
+description: 'Just testing'
+# inputs:
+#   who-to-greet:  # id of input
+#     description: 'Who to greet'
+#     required: true
+#     default: 'World'
+outputs:
+  result: # id of output
+    description: 'just result'
+runs:
+  using: 'node20'
+  main: './dist/index.js'
