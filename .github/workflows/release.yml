@@ -25,11 +25,32 @@ jobs:
           npm install
           npm run build
 
-      - name: Create Release
-        uses: softprops/action-gh-release@v1
+      # - name: Create Release
+      #   uses: softprops/action-gh-release@v1
+      #   with:
+      #     tag_name: ${{ github.ref }}
+      #     files: |
+      #       dist/**
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create temp folder
+        run: mkdir temp_dist
+
+      - name: Copy built files
+        run: cp -r dist/* temp_dist/
+
+      - name: Copy package
+        run: cp package.json temp_dist/
+
+      - name: List root
+        run: ls
+
+      - name: List target folder
+        run: ls temp_dist
+
+      - name: Upload artifact for deployment job
+        uses: actions/upload-artifact@v3
         with:
-          tag_name: ${{ github.ref }}
-          files: |
-            dist/**
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          name: node-app
+          path: temp_dist/*
