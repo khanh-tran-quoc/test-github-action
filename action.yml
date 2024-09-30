@@ -19,5 +19,5 @@ runs:
     - id: test
       env:
         HOLISTICS_API_KEY: 'abc123'
-      run: node ./src/index/.js
+      run: node ./src/index.js
       shell: bash
