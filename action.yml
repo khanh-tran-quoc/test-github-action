@@ -8,6 +8,20 @@ description: 'Just testing'
 outputs:
   result: # id of output
     description: 'just result'
+    value: ${{ steps.test.outputs.result }}
 runs:
-  using: 'node20'
-  main: 'src/index.js'
+  using: "composite"
+  steps:
+    - id: npm-install
+      name: Install Dependencies
+      run: npm install
+      shell: bash
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'
+    - id: test
+      env:
+        HOLISTICS_API_KEY: 'abc123'
+      run: node ./src/index/.js
+      shell: bash
