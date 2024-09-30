@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@actions/core': ^1.10.1
   '@actions/github': ^6.0.0
+  '@types/node': ^22.7.4
   '@vercel/ncc': ^0.38.2
   typescript: ^5.5.3
   vite: ^5.4.1
@@ -12,9 +13,10 @@ dependencies:
   '@actions/github': 6.0.0
 
 devDependencies:
+  '@types/node': 22.7.4
   '@vercel/ncc': 0.38.2
   typescript: 5.6.2
-  vite: 5.4.8
+  vite: 5.4.8_@types+node@22.7.4
 
 packages:
 
@@ -479,6 +481,12 @@ packages:
     resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
     dev: true
 
+  /@types/node/22.7.4:
+    resolution: {integrity: sha512-y+NPi1rFzDs1NdQHHToqeiX2TIS79SWEAw9GYhkkx8bD0ChpfqC+n2j5OXOCpzfojBEBt6DnEnnG9MY0zk1XLg==}
+    dependencies:
+      undici-types: 6.19.8
+    dev: true
+
   /@vercel/ncc/0.38.2:
     resolution: {integrity: sha512-3yel3jaxUg9pHBv4+KeC9qlbdZPug+UMtUOlhvpDYCMSgcNSrS2Hv1LoqMsOV7hf2lYscx+BESfJOIla1WsmMQ==}
     hasBin: true
@@ -598,6 +606,10 @@ packages:
     hasBin: true
     dev: true
 
+  /undici-types/6.19.8:
+    resolution: {integrity: sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==}
+    dev: true
+
   /undici/5.28.4:
     resolution: {integrity: sha512-72RFADWFqKmUb2hmmvNODKL3p9hcB6Gt2DOQMis1SEBaV6a4MH8soBvzg+95CYhCKPFedut2JY9bMfrDl9D23g==}
     engines: {node: '>=14.0'}
@@ -614,7 +626,7 @@ packages:
     hasBin: true
     dev: false
 
-  /vite/5.4.8:
+  /vite/5.4.8_@types+node@22.7.4:
     resolution: {integrity: sha512-FqrItQ4DT1NC4zCUqMB4c4AZORMKIa0m8/URVCZ77OZ/QSNeJ54bU1vrFADbDsuwfIPcgknRkmqakQcgnL4GiQ==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -645,6 +657,7 @@ packages:
       terser:
         optional: true
     dependencies:
+      '@types/node': 22.7.4
       esbuild: 0.21.5
       postcss: 8.4.47
       rollup: 4.22.5
