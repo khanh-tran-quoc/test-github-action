@@ -1,5 +1,5 @@
-// import { setOutput } from "@actions/core";
+import { setOutput } from "@actions/core";
 
-// setOutput('result', 'ok')
+setOutput('result', 'ok')
 
 console.log('ok');
